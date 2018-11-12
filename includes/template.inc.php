@@ -12,53 +12,109 @@
 </head>
 
 <body>
-  <div id="main">
-    <header>
-      <div id="logo">
-        <div id="logo_text">
-          <!-- class="logo_colour", allows you to change the colour of the text -->
-          <h1><a href="index.php">m&uuml;ller&apos;s<span class="logo_colour">_hofladen</span></a></h1>
-          <h2>Natürliche Produkte, direkt ab Hof!</h2>
+        <div class="site">
+
+            <!--Logo-->
+            <header class="company-logo">
+                <img src="images/logo.png" width="60%">
+            </header>
+
+            <!--Titel der Seite-->
+            <header class="page-title">
+                <h1><?php print($page_titel); ?></h1>
+            </header>
+
+            <!--Navigationsleiste-->
+            <nav class="navbar">
+                <ul>
+                    <li><a href="#">Mitarbeiter</a></li>
+                    <li><a href="#">Arbeiten / Projekte</a></li>
+                    <li><a href="#">Auslastungdiagnose Woche</a></li>
+                    <li><a href="#">Auslastungdiagnose Tag</a></li>
+                </ul>
+            </nav>
+
+
+
+
+            <content class="main">
+
+                <!--Erfassungsbutton-->
+                <bar>
+                    Lorem ipsum dolor sit amet, consetetur sadipscing elitr, sed diam nonumy eirmod tempor invidunt ut labore et dolore magna aliquyam erat, sed diam voluptua. At vero eos et accusam et justo duo dolores et ea rebum. Stet clita kasd gubergren, no sea takimata sanctus est Lorem ipsum dolor sit amet. Lorem ipsum dolor sit amet, consetetur sadipscing elitr, sed diam nonumy eirmod tempor invidunt ut labore et dolore magna aliquyam erat,
+                    sed diam voluptua. At vero eos et accusam et justo duo dolores et ea rebum. Stet clita kasd gubergren, no sea takimata sanctus est Lorem ipsum dolor sit amet.
+                </bar>
+
+                <!--Hauptteil-->
+                <table>
+                    <tr>
+                        <th>Vorname</th>
+                        <th>Nachname</th>
+                        <th>Geburtsdatum</th>
+                        <th>Pensum in %</th>
+                        <th>Anstellungsverhälnis</th>
+                        <th>Vertragsende</th>
+                    </tr>
+                    <tr>
+                        <td>Jill</td>
+                        <td>Smith</td>
+                        <td>26.07.1985</td>
+                        <td>100%</td>
+                        <td>Vollzeit</td>
+                        <td></td>
+                    </tr>
+                    <tr>
+                        <td>Aaron</td>
+                        <td>Solo</td>
+                        <td>26.07.1996</td>
+                        <td>100%</td>
+                        <td>Lehrling</td>
+                        <td>31.08.2019</td>
+                    </tr>
+                    <tr>
+                        <td>Jill</td>
+                        <td>Smith</td>
+                        <td>26.07.1985</td>
+                        <td>100%</td>
+                        <td>Vollzeit</td>
+                        <td></td>
+                    </tr>
+                    <tr>
+                        <td>Aaron</td>
+                        <td>Solo</td>
+                        <td>26.07.1996</td>
+                        <td>100%</td>
+                        <td>Lehrling</td>
+                        <td>31.08.2019</td>
+                    </tr>
+                    <tr>
+                        <td>Jill</td>
+                        <td>Smith</td>
+                        <td>26.07.1985</td>
+                        <td>100%</td>
+                        <td>Vollzeit</td>
+                        <td></td>
+                    </tr>
+                    <tr>
+                        <td>Aaron</td>
+                        <td>Solo</td>
+                        <td>26.07.1996</td>
+                        <td>100%</td>
+                        <td>Lehrling</td>
+                        <td>31.08.2019</td>
+                    </tr>
+                </table>
+
+                <!--Beschreibung-->
+                <description>
+                    Lorem ipsum dolor sit amet, consetetur sadipscing elitr, sed diam nonumy eirmod tempor invidunt ut labore et dolore magna aliquyam erat, sed diam voluptua. At vero eos et accusam et justo duo dolores et ea rebum. Stet clita kasd gubergren, no sea takimata sanctus est Lorem ipsum dolor sit amet. Lorem ipsum dolor sit amet, consetetur sadipscing elitr, sed diam nonumy eirmod tempor invidunt ut labore et dolore magna aliquyam erat,
+                    sed diam voluptua. At vero eos et accusam et justo duo dolores et ea rebum. Stet clita kasd gubergren, no sea takimata sanctus est Lorem ipsum dolor sit amet.
+                </description>
+
+            </content>
+
+
+
         </div>
-      </div>
-      <?php include("includes/navigation.inc.php"); ?>
-    </header>
-    <div id="site_content">
-      <div class="gallery">
-        <ul class="images">
-          <li class="show"><img width="950" height="300" src="images/1.jpg" alt="photo_one" /></li>
-          <li><img width="950" height="300" src="images/2.jpg" alt="seascape" /></li>
-          <li><img width="950" height="300" src="images/3.jpg" alt="seascape" /></li>
-        </ul>
-      </div>
-      <?php if($page_news){ ?>
-	      <div id="sidebar_container">
-	        <div class="sidebar">
-	          <?php include("includes/news.inc.php"); ?>
-	        </div>
-	      </div>
-      <?php } ?>
-      <div class="content">
-        <h1><?php print($page_titel); ?></h1>
-        <?php 
-			include("content/".$page_content);
-        ?>
-      </div>
-    </div>
-    <footer>
-      <p>Müller's Hofladen | Bauernhofstrasse 10 | 1234 Bauernhausen</p>
-    </footer>
-  </div>
-  <p>&nbsp;</p>
-  <!-- javascript at the bottom for fast page loading -->
-  <script type="text/javascript" src="js/jquery.js"></script>
-  <script type="text/javascript" src="js/jquery.easing-sooper.js"></script>
-  <script type="text/javascript" src="js/jquery.sooperfish.js"></script>
-  <script type="text/javascript" src="js/image_fade.js"></script>
-  <script type="text/javascript">
-    $(document).ready(function() {
-      $('ul.sf-menu').sooperfish();
-    });
-  </script>
 </body>
 </html>

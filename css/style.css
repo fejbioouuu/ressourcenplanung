@@ -1,0 +1,42 @@
+
+.site {
+    display: grid;
+    height: 95vh;
+    width: auto;
+    grid-template-columns: auto 80%;
+    grid-template-rows: 10% 80%;
+    grid-gap: 1vh;
+    justify-content: stretch;
+
+    grid-template-areas:
+            "logo header"
+            "nav content"
+            "nav content"
+            "nav content";
+}
+
+.company-logo{
+    grid-area: logo;
+    background-color: green;
+}
+
+.page-title{
+    grid-area: header;
+    background-color: yellow;
+}
+
+.navbar{
+    grid-area: nav;
+    background-color: grey;
+}
+
+
+.main{
+    grid-area: content;
+    background-color: red;
+}
+
+h1{
+    margin-left: 1px;
+    font-family: Calibri;
+}

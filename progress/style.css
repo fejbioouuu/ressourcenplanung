@@ -1,9 +1,11 @@
 
 .site {
   display: grid;
-  grid-template-columns: 20% 80%;
+  height: 95vh;
+  width: auto;
+  grid-template-columns: auto 80%;
   grid-template-rows: 10% 10% 60% 20%;
-  grid-gap: 10px;
+  grid-gap: 1vh;
   justify-content: stretch;	
 
   grid-template-areas:
