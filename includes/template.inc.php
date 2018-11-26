@@ -6,9 +6,7 @@
   <title>WMC - <?php print($page_kurztitel); ?></title>
   <meta http-equiv="content-type" content="text/html; charset=utf8" />
   <link rel="stylesheet" type="text/css" href="css/style.css" />
-  <!-- modernizr enables HTML5 elements and feature detects
-  <script type="text/javascript" src="js/modernizr-1.5.min.js"></script>
-  -->
+
 </head>
 
 <body>
@@ -16,7 +14,7 @@
 
             <!--Logo-->
             <header class="company-logo">
-                <img src="images/logo.png" width="60%">
+              <a href="index.php"> <img src="images/logo.png" width="60%"> </a>
             </header>
 
             <!--Titel der Seite-->
@@ -27,10 +25,9 @@
             <!--Navigationsleiste-->
             <nav class="navbar">
                 <ul>
-                    <li><a href="#">Mitarbeiter</a></li>
-                    <li><a href="#">Arbeiten / Projekte</a></li>
-                    <li><a href="#">Auslastungdiagnose Woche</a></li>
-                    <li><a href="#">Auslastungdiagnose Tag</a></li>
+                    <li><a href="absences_type.php">Absenzen</a></li>
+                    <li><a href="employee.php">Mitarbeiter</a></li>
+                    <li><a href="absences.php">Geplante Absenzen</a></li>
                 </ul>
             </nav>
 
@@ -40,12 +37,40 @@
             <content class="main">
 
                 <!--Erfassungsbutton-->
-                <bar>
-                    Lorem ipsum dolor sit amet, consetetur sadipscing elitr, sed diam nonumy eirmod tempor invidunt ut labore et dolore magna aliquyam erat, sed diam voluptua. At vero eos et accusam et justo duo dolores et ea rebum. Stet clita kasd gubergren, no sea takimata sanctus est Lorem ipsum dolor sit amet. Lorem ipsum dolor sit amet, consetetur sadipscing elitr, sed diam nonumy eirmod tempor invidunt ut labore et dolore magna aliquyam erat,
-                    sed diam voluptua. At vero eos et accusam et justo duo dolores et ea rebum. Stet clita kasd gubergren, no sea takimata sanctus est Lorem ipsum dolor sit amet.
+                <bar >
+
+                    <div class="search_bar">
+
+
+                       <a href="#popup"> <button class="btnr">+</button></a><?php print(" ").($button_name); ?>
+                        <input type="text" name="" id="right" placeholder="Hier Suchtext eingeben...">
+
+
+                    </div>
+
                 </bar>
 
+                <br />
+
                 <!--Hauptteil-->
+                <div id="popup" >
+
+
+                    <form>
+                        <a href="#" id="right">&times;</a>
+                        <h1>BLABLABLA</h1>
+
+                        <label>Name der Absenzart</label>
+                        <input type="text" name="" placeholder="">
+                        <label>Ferientage relevant?</label>
+                        JA<input type="radio" name="ferienabzug" value="abzug">
+                        NEIN<input type="radio" name="ferienabzug" value="kein-abzug">
+                    </form>
+
+                </div>
+
+                    <br />
+
                 <table>
                     <tr>
                         <th>Vorname</th>

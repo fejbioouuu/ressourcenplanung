@@ -1,3 +1,5 @@
+/*Grid*/
+
 
 .site {
     display: grid;
@@ -33,10 +35,43 @@
 
 .main{
     grid-area: content;
-    background-color: red;
 }
+
+
+
+    /*Normal css-class*/
+.search_bar{
+
+    border: solid black;
+}
+
+.btnr{
+    border-radius: 50%;
+    height: 5%;
+    width: 3.625%;
+}
+
+
+
 
 h1{
     margin-left: 1px;
     font-family: Calibri;
+}
+
+
+#right{
+    float: right;
+}
+
+#left{
+    float: left;
+}
+
+#popup{
+    opacity: 0;
+}
+
+#popup:target{
+    opacity: 1;
 }
