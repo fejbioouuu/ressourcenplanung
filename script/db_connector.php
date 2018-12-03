@@ -17,7 +17,8 @@
     }
 
     if(isset($_POST['absenden'])){
-        echo "Formular abgsendet";
+       $absenzart = $_POST['name'];
+       $ferienabzug = $_POST['ferienabzug'];
     }
     ?>
 
