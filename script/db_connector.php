@@ -16,5 +16,8 @@
         mysqli_query(getCon(), "INSERT INTO test (id, name, abzug) VALUES ('', '', '' )");
     }
 
+    if(isset($_POST['abschicken'])){
+        echo "Formular abgsendet";
+    }
     ?>
 
