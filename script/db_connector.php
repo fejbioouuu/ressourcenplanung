@@ -1,14 +1,14 @@
 <?php
 
-    $con = mysqli_connect("localhost", "root", "", test);
-/*
+    $con = mysqli_connect("localhost", "root", "", 'test');
+
     if(mysqli_connect_errno() == 0){
         echo "Mit Datenbank verbunden!";
     }
-*/
+
     function getCon(){
         if(!isset($con))
-            $con = mysqli_connect("localhost", "root", "", test);
+            $con = mysqli_connect("localhost", "root", "", 'test');
         return $con;
 }
 
@@ -16,7 +16,7 @@
         mysqli_query(getCon(), "INSERT INTO test (id, name, abzug) VALUES ('', '', '' )");
     }
 
-    if(isset($_POST['abschicken'])){
+    if(isset($_POST['absenden'])){
         echo "Formular abgsendet";
     }
     ?>
