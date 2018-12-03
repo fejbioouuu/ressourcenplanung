@@ -58,15 +58,17 @@
                 <div id="popup" >
 
 
-                    <form>
+                    <form action="template.inc.php" method="post">
                         <a href="#" id="right">&times;</a>
                         <h1>BLABLABLA</h1>
 
                         <label>Name der Absenzart</label>
-                        <input type="text" name="" placeholder="">
+                        <input type="text" name="absenzart" placeholder="">
                         <label>Ferientage relevant?</label>
                         JA<input type="radio" name="ferienabzug" value="abzug">
                         NEIN<input type="radio" name="ferienabzug" value="kein-abzug">
+                        <br/>
+                        <button type="submit" name="absenden">Absenden</button>
                     </form>
 
                 </div>
