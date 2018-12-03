@@ -60,84 +60,29 @@
 
                     <form action="absences_type.php" method="POST">
                         <a href="#" id="right">&times;</a>
-                        <h1>BLABLABLA</h1>
+                        <h1><?php print($popup_title) ?></h1>
 
                         <label>Name der Absenzart</label>
-                        <input type="text" name="absenzart" placeholder="">
+                        <input type="text" name="absenzart" placeholder="" required>
                         <label>Ferientage relevant?</label>
-                        JA<input type="radio" name="ferienabzug" value="1">
-                        NEIN<input type="radio" name="ferienabzug" value="0">
+                        JA<input type="radio" name="ferienabzug" value="1" required>
+                        NEIN<input type="radio" name="ferienabzug" value="0" required>
                         <br/>
                         <button type="submit" name="absenden">Absenden</button>
                     </form>
-
                 </div>
 
                     <br />
+                <div>
+                <?php
+                include "content/$page_content";
+                ?>
+                </div>
 
-                <table>
-                    <tr>
-                        <th>Vorname</th>
-                        <th>Nachname</th>
-                        <th>Geburtsdatum</th>
-                        <th>Pensum in %</th>
-                        <th>Anstellungsverhälnis</th>
-                        <th>Vertragsende</th>
-                    </tr>
-                    <tr>
-                        <td>Jill</td>
-                        <td>Smith</td>
-                        <td>26.07.1985</td>
-                        <td>100%</td>
-                        <td>Vollzeit</td>
-                        <td></td>
-                    </tr>
-                    <tr>
-                        <td>Aaron</td>
-                        <td>Solo</td>
-                        <td>26.07.1996</td>
-                        <td>100%</td>
-                        <td>Lehrling</td>
-                        <td>31.08.2019</td>
-                    </tr>
-                    <tr>
-                        <td>Jill</td>
-                        <td>Smith</td>
-                        <td>26.07.1985</td>
-                        <td>100%</td>
-                        <td>Vollzeit</td>
-                        <td></td>
-                    </tr>
-                    <tr>
-                        <td>Aaron</td>
-                        <td>Solo</td>
-                        <td>26.07.1996</td>
-                        <td>100%</td>
-                        <td>Lehrling</td>
-                        <td>31.08.2019</td>
-                    </tr>
-                    <tr>
-                        <td>Jill</td>
-                        <td>Smith</td>
-                        <td>26.07.1985</td>
-                        <td>100%</td>
-                        <td>Vollzeit</td>
-                        <td></td>
-                    </tr>
-                    <tr>
-                        <td>Aaron</td>
-                        <td>Solo</td>
-                        <td>26.07.1996</td>
-                        <td>100%</td>
-                        <td>Lehrling</td>
-                        <td>31.08.2019</td>
-                    </tr>
-                </table>
 
                 <!--Beschreibung-->
                 <description>
-                    Lorem ipsum dolor sit amet, consetetur sadipscing elitr, sed diam nonumy eirmod tempor invidunt ut labore et dolore magna aliquyam erat, sed diam voluptua. At vero eos et accusam et justo duo dolores et ea rebum. Stet clita kasd gubergren, no sea takimata sanctus est Lorem ipsum dolor sit amet. Lorem ipsum dolor sit amet, consetetur sadipscing elitr, sed diam nonumy eirmod tempor invidunt ut labore et dolore magna aliquyam erat,
-                    sed diam voluptua. At vero eos et accusam et justo duo dolores et ea rebum. Stet clita kasd gubergren, no sea takimata sanctus est Lorem ipsum dolor sit amet.
+                   <?php print ($page_description) ?>
                 </description>
 
             </content>
