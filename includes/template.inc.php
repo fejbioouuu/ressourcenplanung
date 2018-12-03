@@ -65,8 +65,8 @@
                         <label>Name der Absenzart</label>
                         <input type="text" name="absenzart" placeholder="">
                         <label>Ferientage relevant?</label>
-                        JA<input type="radio" name="ferienabzug" value="abzug">
-                        NEIN<input type="radio" name="ferienabzug" value="kein-abzug">
+                        JA<input type="radio" name="ferienabzug" value="1">
+                        NEIN<input type="radio" name="ferienabzug" value="0">
                         <br/>
                         <button type="submit" name="absenden">Absenden</button>
                     </form>

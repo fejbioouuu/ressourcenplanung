@@ -1,24 +1,43 @@
 <?php
 
-    $con = mysqli_connect("localhost", "root", "", 'test');
+    $con = NULL;
 
-    if(mysqli_connect_errno() == 0){
-        echo "Mit Datenbank verbunden!";
-    }
+
+
 
     function getCon(){
-        if(!isset($con))
-            $con = mysqli_connect("localhost", "root", "", 'test');
+        global $con;
+        if(empty($con))
+            $con = new mysqli("localhost", "root", "", 'test');
+        if(!$con->connect_error){
+            echo "Mit Datenbank verbunden!";
+        }
         return $con;
 }
 
-    function insertForm(){
-        mysqli_query(getCon(), "INSERT INTO test (id, name, abzug) VALUES ('', '', '' )");
+
+
+    function insertForm($absenzart, $ferienabzug){
+ //       mysqli_query(getCon(), "INSERT INTO test (name, abzug) VALUES ('".$absenzart."', ".$ferienabzug.")");
+
+        $sql = "INSERT INTO absenzen (name, abzug) VALUES ('".$absenzart."', ".$ferienabzug.")";
+        $conn = getCon();
+        if ($conn->query($sql)=== TRUE){
+            echo "insert complete";
+        }else{
+            echo "Error: " . $sql . "<br/>" . $conn->error;
+        }
+        //mysqli_query(getCon(), "INSERT INTO test (name, abzug) VALUES ('".$absenzart."', ".$ferienabzug.")");
     }
 
     if(isset($_POST['absenden'])){
-       $absenzart = $_POST['name'];
+       $absenzart = $_POST['absenzart'];
        $ferienabzug = $_POST['ferienabzug'];
+
+       var_dump($absenzart,$ferienabzug);
+
+       insertForm($absenzart, $ferienabzug);
     }
+
     ?>
 
