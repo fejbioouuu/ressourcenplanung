@@ -58,7 +58,7 @@
                 <div id="popup" >
 
 
-                    <form action="template.inc.php" method="post">
+                    <form action="absences_type.php" method="POST">
                         <a href="#" id="right">&times;</a>
                         <h1>BLABLABLA</h1>
 
