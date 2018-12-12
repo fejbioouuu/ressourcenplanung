@@ -9,9 +9,9 @@
         global $con;
         if(empty($con))
             $con = new mysqli("localhost", "root", "", 'test');
-        if(!$con->connect_error){
+       /* if(!$con->connect_error){
             echo "Mit Datenbank verbunden!";
-        }
+        }       */
         return $con;
 }
 
