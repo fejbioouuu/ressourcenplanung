@@ -2,9 +2,6 @@
 
     $con = NULL;
 
-
-
-
     function getCon(){
         global $con;
         if(empty($con))
