@@ -1,8 +1,45 @@
+
+
 <?php
-if ($_POST && $_POST["searchtext"]) {
+if (isset($_POST['searchtext'])) {
+    $search = $_POST['searchtext'];
+
+} else {
+    $search = '';
+}
+
+$con = getCon();
+$sqlrequest = "SELECT id, absence_name, absence_type from absences where absence_name like '%" . $search . "%';";
+$result = $con->query($sqlrequest);
+
+echo '<table><tr>
+    <th>ID</th>
+    <th>Absenzname</th>
+    <th>Ferienrelevant</th>
+  </tr>';
+if ($result->num_rows > 0) {
+
+    while ($row = $result->fetch_assoc()) {
+        echo '<tr><td>' . $row['id'] . '</td><td>' . $row['absence_name'] . '</td><td>' . $row['absence_type'] . '</td></tr>';
+    }
+    echo '</table>';
+} else {
+    echo '</table><br><h2>No Results</h2>';
+}
+
+
+
+
+?>
+
+
+<!--
+
+<?php
+/*if ($_POST && $_POST["searchtext"]) {
     $search = $_POST["searchtext"];
 }
-?>
+*/?>
 
 
 <div id="popup">
@@ -10,7 +47,7 @@ if ($_POST && $_POST["searchtext"]) {
 
     <form action="absences_type.php" method="POST">
         <a href="#" id="right">&times;</a>
-        <h1><?php print($popup_title) ?></h1>
+        <h1><?php /*print($popup_title) */?></h1>
 
         <label>Name der Absenzart</label>
         <input type="text" name="absenzart" placeholder="" required>
@@ -30,7 +67,7 @@ if ($_POST && $_POST["searchtext"]) {
 
         <form action="absences_type.php" method="POST">
             <a href="#" id="right">&times;</a>
-            <h1><?php print($popup_title) ?></h1>
+            <h1><?php /*print($popup_title) */?></h1>
 
             <label>Edit</label>
             <input type="text" name="absenzart" placeholder="" required>
@@ -52,7 +89,7 @@ if ($_POST && $_POST["searchtext"]) {
             </tr>
 
             <?php
-            if ($_POST && $_POST["searchtext"]) {
+/*            if ($_POST && $_POST["searchtext"]) {
                 $search = $_POST["searchtext"];
 
             } else {
@@ -77,5 +114,7 @@ if ($_POST && $_POST["searchtext"]) {
             } else {
                 echo "No Results";
             }
-            ?>
+            */?>
 
+
+-->

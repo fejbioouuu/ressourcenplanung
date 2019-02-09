@@ -34,44 +34,34 @@
             </nav>
 
 
-
-
-            <content class="main">
-
                 <!--Erfassungsbutton-->
-                <bar >
+                <div class="search_bar">
+                    <form action="<?php $page_name?>" method="POST"><input type="text" name="searchtext" id="right" placeholder="Hier Suchtext eingeben...">
+                        <button type="submit" name="suchen">Suchen</button> </form>
+                </div>
 
-                    <div class="search_bar">
+                <!--Editberreich-->
+                <edit class="edit_content">
+                    <?php
+                    include "content/$page_edit_content";
+                    ?>
+                </edit>
 
-
-                       <a href="#popup"> <button class="btnr">+</button></a><?php print(" ").($button_name); ?>
-                      <form action="absences_type.php" method="POST"><input type="text" name="searchtext" id="right" placeholder="Hier Suchtext eingeben...">
-                          <button type="submit" name="suchen">Suchen</button> </form>
-
-
-                    </div>
-
-                </bar>
-
-                <br />
-
+                <content class="main">
                 <!--Hauptteil-->
-
                 <?php
                 include "content/$page_content";
                 ?>
-                </div>
+                </content>
+
 
 
                 <!--Beschreibung-->
-                <description>
+                <description class="explanation">
                    <?php print ($page_description) ?>
                 </description>
 
-            </content>
-
-
-
         </div>
+
 </body>
 </html>

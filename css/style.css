@@ -5,16 +5,16 @@
     display: grid;
     height: 95vh;
     width: auto;
-    grid-template-columns: auto 80%;
-    grid-template-rows: 10% 80%;
+    grid-template-columns: auto 30% 25% 25%;
+    grid-template-rows: 10% 5% 65% 20%;
     grid-gap: 1vh;
     justify-content: stretch;
 
     grid-template-areas:
-            "logo header"
-            "nav content"
-            "nav content"
-            "nav content";
+            "logo header header header"
+            "nav bar bar bar"
+            "nav edit content content"
+            "nav description description description";
 }
 
 .company-logo{
@@ -35,15 +35,31 @@
 
 .main{
     grid-area: content;
+    background-color: blueviolet;
 }
+
+.edit_content{
+    grid-area: edit;
+    background-color: blue;
+}
+
+.explanation{
+    grid-area: description;
+    background-color: green;
+}
+
+
+.search_bar {
+    grid-area: bar;
+    border: solid black;
+    background-color: aqua;
+}
+
 
 
 
     /*Normal css-class*/
-.search_bar{
 
-    border: solid black;
-}
 
 .btnr{
     border-radius: 50%;
@@ -75,30 +91,30 @@ h1{
     float: left;
 }
 
-#popup{
-    opacity: 0;
-    position: fixed;
+/*#popup{*/
+    /*opacity: 0;*/
+    /*position: fixed;*/
 
-}
+/*}*/
 
-#popup:target{
-    opacity: 1;
-    position: fixed;
-    background-color: blueviolet;
-    border: solid black 2px;
+/*#popup:target{*/
+    /*opacity: 1;*/
+    /*position: fixed;*/
+    /*background-color: blueviolet;*/
+    /*border: solid black 2px;*/
 
-}
+/*}*/
 
-#popupE{
-    opacity: 0;
-    position: fixed;
+/*#popupE{*/
+    /*opacity: 0;*/
+    /*position: fixed;*/
 
-}
+/*}*/
 
-#popupE:target{
-    opacity: 1;
-    position: fixed;
-    background-color: white;
-    border: solid black 2px;
+/*#popupE:target{*/
+    /*opacity: 1;*/
+    /*position: fixed;*/
+    /*background-color: white;*/
+    /*border: solid black 2px;*/
 
-}
+/*}*/
