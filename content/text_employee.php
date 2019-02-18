@@ -8,7 +8,9 @@ if (isset($_POST['searchtext'])) {
 }
 
 $con = getCon();
-$sqlrequest = "SELECT * from employees where Vorname like '%" . $search . "%';";
+$sqlrequest = 'SELECT * from employees where Vorname like "%' . $search . '%";';
+var_dump($sqlrequest);
+
 $result = $con->query($sqlrequest);
 
 echo '<table><tr>
@@ -29,8 +31,5 @@ if ($result->num_rows > 0) {
 } else {
     echo '</table><br><h2>No Results</h2>';
 }
-
-
-
 
 ?>;

@@ -63,10 +63,10 @@ function populateEmployeeFromPost() : Employee{
 
 //search
 if(isset($_POST['search'])){
-
-    $data = getPosts();
-
-    $searchQuery = 'SELECT * FROM  employees WHERE id = '.$data[0];
+//    $data = getPosts();
+$employee = populateEmployeeFromPost();
+//var_dump($employee);
+    $searchQuery = 'SELECT * FROM  employees WHERE id = '.$employee->getId();
     echo $searchQuery;
     $search_Result = mysqli_query($connect, $searchQuery);
 
@@ -96,7 +96,7 @@ if(isset($_POST['search'])){
 
 if(isset($_POST['delete'])){
     $data = getPosts();
-    $delete_Query = 'DELETE FROM employees WHERE id = '.$data[0];
+    $delete_Query = 'DELETE FROM employees WHERE id = '.$employee->getId();
 
     try{
         $delete_Result = mysqli_query($connect, $delete_Query);
@@ -159,9 +159,11 @@ VALUES ("'.$employee->getVorname().'", "'.$employee->getName().'", "'.$employee-
 
 
 if(isset($_POST['update'])){
+
+
 //    $data = getPosts();
     $employee = populateEmployeeFromPost();
-    $update_Query = 'UPDATE employees SET Vorname="'.$employee->getVorname().'", Name="'.$employee->getAnstellungsverhaeltnis().'" WHERE id = '.$data[0].';';
+    $update_Query = 'UPDATE employees SET Vorname="'.$employee->getVorname().'", Name="'.$employee->getAnstellungsverhaeltnis().'" WHERE id = '.$employee->getId().';';
     echo $update_Query;
     try{
         $update_Result = mysqli_query($connect, $update_Query);
@@ -199,7 +201,7 @@ if( $absence_type === 'Ja'){
 
 
 <form action="employee.php" method="post">
-    <input type="number" name="id" placeholder="Id" value="<?php echo $id;?>"><br><br>
+    <input type="number" name="Id" placeholder="Id" value="<?php echo $id;?>"><br><br>
     <input type="text" name="Vorname" placeholder="Vorname" value="<?php echo $vorname;?>"><br><br>
     <input type="text" name="Name" placeholder="Name" value="<?php echo $name;?>"><br><br>
     <select name="Anstellungsverhaeltnis">
