@@ -21,28 +21,30 @@ try{
     echo 'Error';
 }
 */
-
+require_once 'class/Absenctype.php';
 $connect = getCon();
 
 $id = "";
 $absence_name = "";
 $absence_type = "";
 
-function getPosts()
+/**
+ * @return Absencetype
+ */
+function populateAbsencetypeFromPost() : Absencetype
 {
-    $posts = array();
-    $posts[0] = $_POST['id'];
-    $posts[1] = $_POST['absence_name'];
-    $posts[2] = $_POST['absence_type'];
-    return $posts;
+    $Absencetype = new Absencetype();
+    $Absencetype->setId(isset($_POST['Id']) ? $_POST['Id'] : null);
+    $Absencetype->setAbsenceName(isset($_POST['absence_name']) ? $_POST['absence_name'] : null);
+    $Absencetype->setAbsenceType(isset($_POST['absence_type']) ? $_POST['absence_type'] : null);
+    return $Absencetype;
 }
 
 //search
 if(isset($_POST['search'])){
 
-    $data = getPosts();
-
-    $searchQuery = 'SELECT * FROM  absences WHERE id = '.$data[0];
+    $Absencetype = populateEmployeeFromPost();
+    $searchQuery = 'SELECT * FROM  absences WHERE id = '.$Absencetype->getId();
     echo $searchQuery;
     $search_Result = mysqli_query($connect, $searchQuery);
 
@@ -67,8 +69,8 @@ if(isset($_POST['search'])){
 
 
 if(isset($_POST['delete'])){
-    $data = getPosts();
-    $delete_Query = 'DELETE FROM absences WHERE id = '.$data[0];
+    $Absencetype = populateAbsencetypeFromPost();
+    $delete_Query = 'DELETE FROM absences WHERE id = '.$Absencetype->getId();
 
     try{
         $delete_Result = mysqli_query($connect, $delete_Query);
@@ -89,8 +91,8 @@ if(isset($_POST['delete'])){
 
 
 if(isset($_POST['insert'])){
-    $data = getPosts();
-    $insert_Query = 'INSERT INTO absences (absence_name, absence_type) VALUES ("'.$data[1].'", "'.$data[2].'");';
+    $Absencetype = populateAbsencetypeFromPost();
+    $insert_Query = 'INSERT INTO absences (absence_name, absence_type) VALUES ("'.$Absencetype->getAbsenceName().'", "'.$Absencetype->getAbsenceType().'");';
     echo $insert_Query ;
 
     try{
@@ -111,8 +113,8 @@ if(isset($_POST['insert'])){
 }
 
 if(isset($_POST['update'])){
-    $data = getPosts();
-    $update_Query = 'UPDATE absences SET absence_name="'.$data[1].'", absence_type="'.$data[2].'" WHERE id = '.$data[0].';';
+    $Absencetype = populateAbsencetypeFromPost();
+    $update_Query = 'UPDATE absences SET absence_name="'.$Absencetype->getAbsenceName().'", absence_type="'.$Absencetype->getAbsenceType().'" WHERE id = '.$Absencetype->getId().';';
     echo $update_Query;
     try{
         $update_Result = mysqli_query($connect, $update_Query);
@@ -149,7 +151,7 @@ if( $absence_type === 'Ja'){
 ?>
 
         <form action="absences_type.php" method="post">
-            <input type="number" name="id" placeholder="Id" value="<?php echo $id;?>"><br><br>
+            <input type="number" name="Id" placeholder="Id" value="<?php echo $id;?>"><br><br>
             <input type="text" name="absence_name" placeholder="Absenz Name" value="<?php echo $absence_name;?>"><br><br>
             <select name="absence_type">
                 <option value="Ja" <?= $absence_type === 'Ja' ? 'selected' : null;?>>Ja</option>

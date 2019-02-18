@@ -12,3 +12,4 @@ $popup_title = "Bitte Absenzart erfassen:";
 //Template includen
 include("includes/template.inc.php");
 ?>
+

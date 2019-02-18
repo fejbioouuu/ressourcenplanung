@@ -95,7 +95,7 @@ $employee = populateEmployeeFromPost();
 
 
 if(isset($_POST['delete'])){
-    $data = getPosts();
+   $employee = populateEmployeeFromPost();
     $delete_Query = 'DELETE FROM employees WHERE id = '.$employee->getId();
 
     try{
@@ -155,7 +155,6 @@ VALUES ("'.$employee->getVorname().'", "'.$employee->getName().'", "'.$employee-
 
 
 
-// @todo weiterarbeiten
 
 
 if(isset($_POST['update'])){
