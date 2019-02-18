@@ -3,7 +3,7 @@
  * Created by PhpStorm.
  * User: Fabio
  * Date: 18.02.2019
- * Time: 15:00
+ * Time: 15:0012
  */
 
 class Absencetype
