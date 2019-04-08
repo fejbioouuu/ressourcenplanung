@@ -20,15 +20,21 @@ $users = $stmt->fetch();
 
 
 
+<?php
+echo $sqlEmp;
 
+
+
+echo $users;
+?>
 
 
 <form action="absences.php" method="post">
-    <input type="number" name="Id" placeholder="Id" value="<?php echo $id;?>"><br><br>
+    <input type="number" name="Id" placeholder="Id" value="<?php echo $user['id'];?>"><br><br>
     <select>
-        <?php foreach ($users as $user): ?>
-            <option value="<?php $user['id']; ?>"><?php $user['name']; ?> ok </option>
-                <?php endforeach; ?>
+        <?php foreach ($users as $user){ ?>
+            <option value="<?php echo $user['id']; ?>"><?php $user['name']; ?> ok </option>
+                <?php } ?>
 
 
 
@@ -40,4 +46,21 @@ $users = $stmt->fetch();
         <input type="submit" name="search" value="Find">
     </div>
 
+</form>
+<form>
+    <select>
+        <option selected="selected">Choose one</option>
+        <?php
+        // A sample product array
+        $products = array("Mobile", "Laptop", "Tablet", "Camera");
+
+        // Iterating through the product array
+        foreach($products as $item){
+            ?>
+            <option value="<?php echo strtolower($item); ?>"><?php echo $item; ?></option>
+            <?php
+        }
+        ?>
+    </select>
+    <input type="submit" value="Submit">
 </form>
