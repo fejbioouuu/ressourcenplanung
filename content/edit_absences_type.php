@@ -21,7 +21,7 @@ try{
     echo 'Error';
 }
 */
-require_once 'class/Absenctype.php';
+require_once 'class/Absencetype.php';
 $connect = getCon();
 
 $id = "";
