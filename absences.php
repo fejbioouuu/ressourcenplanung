@@ -2,7 +2,7 @@
 //Seiten Parameter setzen
 $page_titel = "Hier können Absenzen erfasst werden";
 $page_kurztitel = "absences";
-$page_content = "text_absences.php.php";
+$page_content = "text_absences.php";
 $page_edit_content = "edit_absences.php";
 $page_description = "Beschreibung: Absenzen bla bla bla bla bla bla bla bla bla bla bla bla bla bla bla bla bla bla bla bla bla";
 $button_name = "Geplante Absenzen";

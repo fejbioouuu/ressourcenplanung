@@ -185,8 +185,8 @@ function getAllEmployees() {
         <?php } ?>
     </select>
     <br><br>
-    <input type="date" name="start_date"  value="<?php $start_date === null ? $Absences->getStartDate() :; ?>"><br><br>
-    <input type="date" name="end_date"  value="<?php $end_date; ?>"><br><br>
+    <input type="date" name="start_date"  value="<?php echo $start_date; ?>"><br><br>
+    <input type="date" name="end_date"  value="<?php echo $end_date; ?>"><br><br>
         <div>
         <input type="submit" name="insert" value="Add">
         <input type="submit" name="update" value="Update">

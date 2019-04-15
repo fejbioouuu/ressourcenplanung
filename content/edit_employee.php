@@ -149,7 +149,7 @@ if (isset($_POST['update'])) {
 
 //    $data = getPosts();
 	$employee = populateEmployeeFromPost();
-	$update_Query = 'UPDATE employees SET Vorname="' . $employee->getVorname() . '", Name="' . $employee->getAnstellungsverhaeltnis() . '" WHERE id = ' . $employee->getId() . ';';
+	$update_Query = 'UPDATE employees SET Vorname="' . $employee->getVorname() . '", Name="' . $employee->getName(). '", Anstellungsverhaeltnis="' .  $employee->getAnstellungsverhaeltnis() . '", Pensum="' . $employee->getPensum() . '", Vertragsbeginn="' . $employee->getVertragsbeginn() . '", Vertragsende="' . $employee->getVertragsende() . '" WHERE id = ' . $employee->getId() . ';';
 	echo $update_Query;
 	try {
 		$update_Result = mysqli_query($connect, $update_Query);
