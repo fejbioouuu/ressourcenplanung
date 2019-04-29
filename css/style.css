@@ -91,6 +91,21 @@ h1{
     float: left;
 }
 
+
+#myProgress {
+    width: 100%;
+    background-color: #ddd;
+}
+
+#myBar {
+    width: 0%;
+    height: 30px;
+    background-color: #4CAF50;
+    text-align: center;
+    line-height: 30px;
+    color: white;
+}
+
 /*#popup{*/
     /*opacity: 0;*/
     /*position: fixed;*/
