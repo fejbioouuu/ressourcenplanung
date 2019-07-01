@@ -36,8 +36,8 @@
 
                 <!--Erfassungsbutton-->
                 <div class="search_bar">
-                    <form action="<?php $page_name?>" method="POST"><input type="text" name="searchtext" id="right" placeholder="Hier Suchtext eingeben...">
-                        <button type="submit" name="suchen">Suchen</button> </form>
+                    <form class="h100" action="<?php $page_name?>" method="POST"><input class="h100 rlpadding" type="text" name="searchtext" id="right" placeholder="Hier Suchtext eingeben...">
+                        <button  class="h100 border rlpadding" type="submit" name="suchen">Suchen</button> </form>
                 </div>
 
                 <!--Editberreich-->

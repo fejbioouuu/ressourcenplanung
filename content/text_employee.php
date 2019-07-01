@@ -31,7 +31,7 @@ echo '<tr><td>' . $row['id'] . '</td>
     <td>' . $row['Name'] . '</td>
     <td>' . $row['Anstellungsverhaeltnis'] . '</td>
     <td>
-        <div id="myProgress">
+        <div class="myProgress">
             <div id="myBar'.$row['id'].'" class="progressBar" data-id="'.$row['id'].'" data-pensum="'.$row['Pensum'].'">data->0%</div>        
         </div>
        

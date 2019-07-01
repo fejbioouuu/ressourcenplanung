@@ -15,7 +15,7 @@ function move(id) {
 
     //start bei 0%
     var width = 0;
-    var inter = setInterval(frame, 10);
+    var inter = setInterval(frame, 20);
 
     function frame() {
         if (width >= elem.dataset.pensum) {

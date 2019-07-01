@@ -55,10 +55,28 @@
     background-color: aqua;
 }
 
+.h100{
+    height: 100%;
+    padding: 0px;
+    margin: 0px;
+    border: 0px;
+}
 
+.h90{
+    height: 90%;
+}
 
+.border{
+    border: 1px solid black;
 
+}
     /*Normal css-class*/
+
+.rlpadding{
+    padding-right: 4px;
+    padding-left: 4px;
+
+}
 
 
 .btnr{
@@ -91,19 +109,21 @@ h1{
     float: left;
 }
 
-
-#myProgress {
+.myProgress {
     width: 100%;
     background-color: #ddd;
+    border-radius: 10px;
 }
-
-#myBar {
+.progressBar {
     width: 0%;
-    height: 30px;
+    /*height: 30px;*/
     background-color: #4CAF50;
     text-align: center;
+    /*align-items: center;*/
     line-height: 30px;
-    color: white;
+    color: black;
+
+    border-radius: 10px;
 }
 
 /*#popup{*/
