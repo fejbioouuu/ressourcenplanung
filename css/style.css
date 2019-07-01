@@ -19,40 +19,54 @@
 
 .company-logo{
     grid-area: logo;
-    background-color: green;
+    /*background-color: green;*/
+    border: black solid 1px;
+    background-color: lightgray;
 }
 
 .page-title{
     grid-area: header;
-    background-color: yellow;
+    /*background-color: yellow;*/
+    border: black solid 1px;
+    background-color: lightgray;
 }
 
 .navbar{
     grid-area: nav;
-    background-color: grey;
+    /*background-color: grey;*/
+    border: black solid 1px;
+    background-color: lightgray;
 }
 
 
 .main{
     grid-area: content;
-    background-color: blueviolet;
+    /*background-color: blueviolet;*/
+    border: black solid 1px;
+    background-color: lightgray;
 }
 
 .edit_content{
     grid-area: edit;
-    background-color: blue;
+    /*background-color: blue;*/
+    border: black solid 1px;
+    background-color: lightgray;
 }
 
 .explanation{
     grid-area: description;
-    background-color: green;
+    /*background-color: green;*/
+    border: black solid 1px;
+    background-color: lightgray;
 }
 
 
 .search_bar {
     grid-area: bar;
     border: solid black;
-    background-color: aqua;
+    /*background-color: aqua;*/
+    border: black solid 1px;
+    background-color: lightgray;
 }
 
 .h100{
@@ -90,7 +104,7 @@
     width: 100%;
     font-family: Calibri;
     font-size: 30px;
-    background-color: green;
+    /*background-color: green;*/
 
 }
 
