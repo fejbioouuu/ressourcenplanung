@@ -194,7 +194,7 @@ if( $absence_type === 'Ja'){
         <option value="Praktikum" <?= $anstellungsverhaeltnis === 'Praktikum' ? 'selected' : null; ?>>Praktikum</option>
         <option value="Lehrling" <?= $anstellungsverhaeltnis === 'Lehrling' ? 'selected' : null; ?>>Lehrling</option>
     </select><br><br>
-    <input type="text" name="Pensum" placeholder="Pensum" value="<?php echo $pensum; ?>"><br><br>
+    <input type="number"  min="1" max="100" name="Pensum" placeholder="Pensum" value="<?php echo $pensum; ?>"><br><br>
     <input type="date" name="Vertragsbeginn" placeholder="Vertragsbeginn"
            value="<?php echo $vertragsbeginn; ?>"><br><br>
     <input type="date" name="Vertragsende" value="<?php echo $vertragsende; ?>"><br><br>

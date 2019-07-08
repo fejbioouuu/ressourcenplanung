@@ -9,7 +9,7 @@ if (isset($_POST['searchtext'])) {
 }
 
 $con = getCon();
-$sqlrequest = 'SELECT * from employees where Vorname like "%' . $search . '%";';
+$sqlrequest = 'SELECT * from employees where UPPER (Vorname) like UPPER ("%' . $search . '%") OR  UPPER (Name) like UPPER ("%' . $search . '%") OR  UPPER (Anstellungsverhaeltnis) like UPPER ("%' . $search . '%") OR Pensum = ("' . $search . '") OR (Vertragsbeginn) like ("%' . $search . '%") OR (Vertragsende) like ("%' . $search . '%");';
 var_dump($sqlrequest);
 
 $result = $con->query($sqlrequest);

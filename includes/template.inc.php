@@ -16,7 +16,7 @@
 
             <!--Logo-->
             <header class="company-logo">
-              <a href="index.php"> <img src="images/logo.png" width="60%"> </a>
+              <a href="index.php"> <img src="images/logo.png" width="50%" > </a>
             </header>
 
             <!--Titel der Seite-->
@@ -37,7 +37,7 @@
                 <!--Erfassungsbutton-->
                 <div class="search_bar">
                     <form class="h100" action="<?php $page_name?>" method="POST"><input class="h100 rlpadding" type="text" name="searchtext" id="right" placeholder="Hier Suchtext eingeben...">
-                        <button  class="h100 border rlpadding" type="submit" name="suchen">Suchen</button> </form>
+                        <button  class="border-right h100 rlpadding" type="submit" name="suchen">Suchen</button> </form>
                 </div>
 
                 <!--Editberreich-->

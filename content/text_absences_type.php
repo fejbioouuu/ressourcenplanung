@@ -9,7 +9,7 @@ if (isset($_POST['searchtext'])) {
 }
 
 $con = getCon();
-$sqlrequest = "SELECT id, absence_name, absence_type from absences where absence_name like '%" . $search . "%';";
+$sqlrequest = "SELECT id, absence_name, absence_type from absences where UPPER(absence_name) like UPPER('%" . $search . "%') OR UPPER(absence_type) like UPPER('%" . $search . "%');";
 $result = $con->query($sqlrequest);
 
 echo '<table><tr>

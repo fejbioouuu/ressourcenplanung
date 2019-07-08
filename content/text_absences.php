@@ -10,7 +10,7 @@ if (isset($_POST['searchtext'])) {
 
 $con = getCon();
 $sqlrequest = "SELECT ae.id, ae.start_date, ae.end_date, a.absence_name, e.Vorname, e.Name FROM absence_entry AS ae LEFT JOIN absences AS a  ON  a.id = ae.idabsence
-LEFT JOIN employees AS e ON  e.id = ae.idemployee where a.absence_name like '%" . $search . "%';";
+LEFT JOIN employees AS e ON  e.id = ae.idemployee where UPPER (a.absence_name) like UPPER('%" . $search . "%') OR UPPER (e.Vorname) like UPPER('%" . $search . "%') OR UPPER (e.Name) like UPPER('%" . $search . "%') OR UPPER (ae.end_date) like UPPER('%" . $search . "%')OR UPPER (ae.start_date) like UPPER('%" . $search . "%');";
 $result = $con->query($sqlrequest);
 
 echo '<table><tr>

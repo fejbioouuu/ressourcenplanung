@@ -44,6 +44,8 @@
     /*background-color: blueviolet;*/
     border: black solid 1px;
     background-color: lightgray;
+    overflow: scroll;
+
 }
 
 .edit_content{
@@ -84,6 +86,11 @@
     border: 1px solid black;
 
 }
+
+.border-right{
+    border-right: 1px solid black;
+}
+
     /*Normal css-class*/
 
 .rlpadding{
@@ -139,6 +146,8 @@ h1{
 
     border-radius: 10px;
 }
+
+
 
 /*#popup{*/
     /*opacity: 0;*/

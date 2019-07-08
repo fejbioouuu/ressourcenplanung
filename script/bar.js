@@ -18,7 +18,7 @@ function move(id) {
     var inter = setInterval(frame, 20);
 
     function frame() {
-        if (width >= elem.dataset.pensum) {
+        if (width >= elem.dataset.pensum || width >= 100) {
             clearInterval(inter);
         } else {
             width++;
