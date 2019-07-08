@@ -1,2 +1,0 @@
-# ressourcenplanung
-Planungstool
