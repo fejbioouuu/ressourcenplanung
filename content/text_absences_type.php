@@ -1,16 +1,55 @@
 
 
 <?php
+
 if (isset($_POST['searchtext'])) {
     $search = $_POST['searchtext'];
+    $searchTextArray =  preg_split("/[\s,]+/", $search);
 
 } else {
-    $search = '';
+    $searchTextArray = '';
 }
 
+print_r($searchTextArray);
+
 $con = getCon();
-$sqlrequest = "SELECT id, absence_name, absence_type from absences where UPPER(absence_name) like UPPER('%" . $search . "%') OR UPPER(absence_type) like UPPER('%" . $search . "%');";
-$result = $con->query($sqlrequest);
+//$sqlrequest = "SELECT id, absence_name, absence_type from absences where UPPER(absence_name) like UPPER('%" . $search . "%') OR UPPER(absence_type) like UPPER('%" . $search . "%');";
+$newSqlRequest = "SELECT id, absence_name, absence_type from absences where";
+
+
+
+
+
+if (!isset($_POST['searchtext'])){
+    $newSqlRequest = "SELECT id, absence_name, absence_type from absences";
+}else{
+    foreach ($searchTextArray as $searchTextString){
+        $newSqlRequest .= " UPPER(absence_name) like UPPER('%" . $searchTextString . "%') OR UPPER(absence_type) like UPPER('%" . $searchTextString . "%') OR ";
+    }
+
+    $newSqlRequest = substr($newSqlRequest, 0, -3);
+}
+//
+
+//print_r("$newSqlRequest");
+
+$result = $con->query($newSqlRequest);
+
+/*
+ Prüfung auf Dublikate
+insert into employees (Vorname, Name, Anstellungsverhaeltnis, Pensum, Vertragsbeginn, Vertragsende)
+
+select "Bababa", "Vorlalal", "Teilzeit", 100, "2019-04-18", "0000-00-00"
+From employees
+where not exists(
+	select Vorname, Name, Anstellungsverhaeltnis, Pensum, Vertragsbeginn, Vertragsende
+	from employees
+	where Vorname = "Bababa" and Name = "Vorlalal" and Anstellungsverhaeltnis = "Teilzeit" and Pensum = 100 and Vertragsbeginn = "2019-04-18" and Vertragsende = "0000-00-00"
+)
+*/
+
+
+
 
 echo '<table><tr>
     <th>ID</th>

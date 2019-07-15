@@ -3,16 +3,30 @@
 <?php
 if (isset($_POST['searchtext'])) {
     $search = $_POST['searchtext'];
+    $searchTextArray =  preg_split("/[\s,]+/", $search);
 
 } else {
-    $search = '';
+    $searchTextArray = '';
 }
 
 $con = getCon();
-$sqlrequest = 'SELECT * from employees where UPPER (Vorname) like UPPER ("%' . $search . '%") OR  UPPER (Name) like UPPER ("%' . $search . '%") OR  UPPER (Anstellungsverhaeltnis) like UPPER ("%' . $search . '%") OR Pensum = ("' . $search . '") OR (Vertragsbeginn) like ("%' . $search . '%") OR (Vertragsende) like ("%' . $search . '%");';
-var_dump($sqlrequest);
+//$sqlrequest = 'SELECT * from employees where UPPER (Vorname) like UPPER ("%' . $search . '%") OR  UPPER (Name) like UPPER ("%' . $search . '%") OR  UPPER (Anstellungsverhaeltnis) like UPPER ("%' . $search . '%") OR Pensum = ("' . $search . '") OR (Vertragsbeginn) like ("%' . $search . '%") OR (Vertragsende) like ("%' . $search . '%");';
+$newSqlRequest = "SELECT * from employees where";
 
-$result = $con->query($sqlrequest);
+if (!isset($_POST['searchtext'])) {
+    $newSqlRequest = "SELECT * from employees";
+} else {
+    foreach ($searchTextArray as $searchTextString){
+        $newSqlRequest .= " UPPER (Vorname) like UPPER ('%" . $searchTextString . "%') OR  UPPER (Name) like UPPER ('%" . $searchTextString . "%') OR  UPPER (Anstellungsverhaeltnis) like UPPER ('%" . $searchTextString . "%') OR Pensum = ('" . $searchTextString . "') OR (Vertragsbeginn) like ('%" . $searchTextString . "%') OR (Vertragsende) like ('%" . $searchTextString . "%') OR ";
+    }
+        $newSqlRequest = substr($newSqlRequest, 0, -3);
+
+}
+
+//print_r($newSqlRequest);
+
+
+$result = $con->query($newSqlRequest);
 
 echo '<table><tr>
     <th>ID</th>
