@@ -40,6 +40,8 @@ echo '<table><tr>
 if ($result->num_rows > 0) {
 
 while ($row = $result->fetch_assoc()) {
+
+
 echo '<tr><td>' . $row['id'] . '</td>
     <td>' . $row['Vorname'] . '</td>
     <td>' . $row['Name'] . '</td>
@@ -52,8 +54,17 @@ echo '<tr><td>' . $row['id'] . '</td>
        
 
     </td>
-    <td>' . $row['Vertragsbeginn'] . '</td>
-    <td>' . $row['Vertragsende'] . '</td></tr>';
+    <td>' .  date('d.m.Y',strtotime($row['Vertragsbeginn']))  . '</td>
+    <td>';
+
+if ($row['Vertragsende']==='0000-00-00') {
+   echo '00.00.0000';
+}else{
+    echo (date('d.m.Y',strtotime($row['Vertragsende'])));
+}
+
+
+    '</td></tr>';
 
 }
 
@@ -63,7 +74,7 @@ echo '</table>';
 echo '</table><br><h2>No Results</h2>';
 }
 
-?>;
+?>
 <!---->
 <!--<progress id="progressBar'.$row['id'].'" value="0" max="' . $row['Pensum'] . '">' . '</progress>-->
 <!--<span id="status'.$row['id'].'"></span><script>fillProgressBar('.$row['id'].');</script>-->

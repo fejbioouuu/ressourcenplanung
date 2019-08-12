@@ -16,7 +16,7 @@
 
             <!--Logo-->
             <header class="company-logo">
-              <a href="index.php"> <img src="images/logo.png" width="50%" > </a>
+              <a href="absences.php"> <img src="images/logo.png" width="50%" > </a>
             </header>
 
             <!--Titel der Seite-->
@@ -27,7 +27,7 @@
             <!--Navigationsleiste-->
             <nav class="navbar">
                 <ul>
-                    <li><a href="absences_type.php">Absenzen</a></li>
+                    <li><a href="absences_type.php">Absenzart</a></li>
                     <li><a href="employee.php">Mitarbeiter</a></li>
                     <li><a href="absences.php">Geplante Absenzen</a></li>
                 </ul>

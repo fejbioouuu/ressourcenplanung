@@ -49,7 +49,24 @@ echo '<table><tr>
 if ($result->num_rows > 0) {
 
     while ($row = $result->fetch_assoc()) {
-        echo '<tr><td>' . $row['id'] . '</td><td>' . $row['Vorname'] . '</td><td>' . $row['Name'] . '</td><td>' . $row['absence_name'] . '</td><td>' . $row['start_date'] . '</td><td>' . $row['end_date'] . '</td></tr>';
+        echo '<tr><td>' . $row['id'] . '</td><td>' . $row['Vorname'] . '</td><td>' . $row['Name'] . '</td><td>' . $row['absence_name'] . '</td><td>';
+
+
+
+        if ($row['start_date']==='0000-00-00') {
+            echo '00.00.0000' . '</td><td>' ;
+        }else{
+            echo (date('d.m.Y',strtotime($row['end_date']))) . '</td><td>' ;
+        }
+
+        if ($row['end_date']==='0000-00-00') {
+            echo '00.00.0000' . '</td></tr>' ;
+        }else{
+            echo (date('d.m.Y',strtotime($row['end_date']))) . '</td></tr>' ;
+        }
+
+
+
     }
     echo '</table>';
 } else {

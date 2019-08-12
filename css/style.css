@@ -1,5 +1,9 @@
 /*Grid*/
 
+body{
+    font-family: Calibri;
+    font-size: 20px;
+}
 
 .site {
     display: grid;
@@ -13,7 +17,7 @@
     grid-template-areas:
             "logo header header header"
             "nav bar bar bar"
-            "nav edit content content"
+            "nav content content edit"
             "nav description description description";
 }
 
@@ -109,8 +113,7 @@
 .table{
     text-align: left;
     width: 100%;
-    font-family: Calibri;
-    font-size: 30px;
+
     /*background-color: green;*/
 
 }
