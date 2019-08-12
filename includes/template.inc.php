@@ -43,14 +43,14 @@
                 <!--Editberreich-->
                 <edit class="edit_content">
                     <?php
-                    include "content/$page_edit_content";
+                    include "content/update/$page_edit_content";
                     ?>
                 </edit>
 
                 <content class="main">
                 <!--Hauptteil-->
                 <?php
-                include "content/$page_content";
+                include "content/list/$page_content";
                 ?>
                 </content>
 
