@@ -151,9 +151,9 @@ if( $absence_type === 'Ja'){
 ?>
 
         <form action="absences_type.php" method="post">
-            <input type="number" name="Id" placeholder="Id" value="<?php echo $id;?>"><br><br>
-            <input type="text" name="absence_name" placeholder="Absenz Name" value="<?php echo $absence_name;?>"><br><br>
-            <select name="absence_type">
+            <input type="number" name="Id" placeholder="Id" id="absenceTypeUpdateId" value="<?php echo $id;?>"><br><br>
+            <input type="text" name="absence_name" placeholder="Absenz Name" id="absenceTypeUpdateName" value="<?php echo $absence_name;?>"><br><br>
+            <select name="absence_type" id="absenceTypeUpdateType">
                 <option value="Ja" <?= $absence_type === 'Ja' ? 'selected' : null;?>>Ja</option>
                 <option value="Nein" <?= $absence_type === 'Nein' ? 'selected' : null;?>>Nein</option>
             </select><br><br>

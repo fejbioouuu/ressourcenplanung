@@ -1,5 +1,6 @@
 <?php include "script/db_connector.php";
 
+
 ?>
 <!DOCTYPE HTML>
 <html>
@@ -62,6 +63,6 @@
                 </description>
 
         </div>
-
+        <script src="script/eventlistener.js" language="javascript"></script>
 </body>
 </html>

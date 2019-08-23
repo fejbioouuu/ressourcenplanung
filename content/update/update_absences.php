@@ -172,21 +172,21 @@ function getAllEmployees() {
 
 
 <form action="absences.php" method="post">
-    <input type="number" name="id" placeholder="Id" value="<?php echo $id; ?>"><br><br>
-    <select name = "idemployee">
+    <input type="number" name="id" placeholder="Id" id="absencesUpdateId" value="<?php echo $id; ?>"><br><br>
+    <select name = "idemployee" id="absencesUpdateEmployeeName">
         <?php foreach (getAllEmployees() as $employee){ ?>
             <option value="<?php echo $employee->getId(); ?>"> <?php echo $employee->getVorname().' '.$employee->getName(); ?> </option>
         <?php } ?>
     </select>
     <br> <br>
-    <select name = "idabsence">
+    <select name = "idabsence" id="absencesUpdateTypeName">
         <?php foreach (getAllAbsenceTypes() as $absenceType){ ?>
             <option value="<?php echo $absenceType->getId(); ?>"> <?php echo $absenceType->getAbsenceName(); ?> </option>
         <?php } ?>
     </select>
     <br><br>
-    <input type="date" name="start_date"  value="<?php echo $start_date; ?>"><br><br>
-    <input type="date" name="end_date"  value="<?php echo $end_date; ?>"><br><br>
+    <input type="date" name="start_date" id="absencesUpdateStartDate" value="<?php echo $start_date; ?>"><br><br>
+    <input type="date" name="end_date" id="absencesUpdateEndDate" value="<?php echo $end_date; ?>"><br><br>
         <div>
         <input type="submit" name="insert" value="Add">
         <input type="submit" name="update" value="Update">

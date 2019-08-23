@@ -51,7 +51,7 @@ where not exists(
 
 
 
-echo '<table><tr>
+echo '<table id="absenceTypeTable"><tr >
     <th>ID</th>
     <th>Absenzname</th>
     <th>Ferienrelevant</th>
@@ -59,7 +59,7 @@ echo '<table><tr>
 if ($result->num_rows > 0) {
 
     while ($row = $result->fetch_assoc()) {
-        echo '<tr><td>' . $row['id'] . '</td><td>' . $row['absence_name'] . '</td><td>' . $row['absence_type'] . '</td></tr>';
+        echo '<tr class="absenceTypeContent"><td class="absenceTypeId">' . $row['id'] . '</td><td class="absenceTypeName">' . $row['absence_name'] . '</td><td class="absenceTypeType">' . $row['absence_type'] . '</td></tr>';
     }
     echo '</table>';
 } else {

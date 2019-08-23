@@ -15,12 +15,12 @@ $con = getCon();
 //LEFT JOIN employees AS e ON  e.id = ae.idemployee where UPPER (a.absence_name) like UPPER('%" . $search . "%') OR UPPER (e.Vorname) like UPPER('%" . $search . "%') OR UPPER (e.Name) like UPPER('%" . $search . "%') OR UPPER (ae.end_date) like UPPER('%" . $search . "%')OR UPPER (ae.start_date) like UPPER('%" . $search . "%');";
 //$result = $con->query($sqlrequest);
 
-$newSqlRequest = "SELECT ae.id, ae.start_date, ae.end_date, a.absence_name, e.Vorname, e.Name FROM absence_entry AS ae LEFT JOIN absences AS a  ON  a.id = ae.idabsence
+$newSqlRequest = "SELECT ae.id, ae.start_date, ae.end_date, a.absence_name, a.id as absence_type_id,e.Vorname, e.Name FROM absence_entry AS ae LEFT JOIN absences AS a  ON  a.id = ae.idabsence
 LEFT JOIN employees AS e ON  e.id = ae.idemployee where";
 
 
 if (!isset($_POST['searchtext'])){
-    $newSqlRequest = "SELECT ae.id, ae.start_date, ae.end_date, a.absence_name, e.Vorname, e.Name FROM absence_entry AS ae LEFT JOIN absences AS a  ON  a.id = ae.idabsence
+    $newSqlRequest = "SELECT ae.id, ae.start_date, ae.end_date, a.absence_name, a.id as absence_type_id, e.Vorname, e.Name FROM absence_entry AS ae LEFT JOIN absences AS a  ON  a.id = ae.idabsence
 LEFT JOIN employees AS e ON  e.id = ae.idemployee";
 }else{
     foreach ($searchTextArray as $searchTextString){
@@ -38,7 +38,7 @@ $result = $con->query($newSqlRequest);
 
 
 
-echo '<table><tr>
+echo '<table id="absencesTable"><tr>
     <th>ID</th>
     <th>Vorname</th>
     <th>Name</th>
@@ -49,14 +49,15 @@ echo '<table><tr>
 if ($result->num_rows > 0) {
 
     while ($row = $result->fetch_assoc()) {
-        echo '<tr><td>' . $row['id'] . '</td><td>' . $row['Vorname'] . '</td><td>' . $row['Name'] . '</td><td>' . $row['absence_name'] . '</td><td>';
+//        var_dump($row);
+        echo '<tr class="absencesContent"><td class="absencesId">' . $row['id'] . '</td><td>' . $row['Vorname'] . '</td><td>' . $row['Name'] . '</td><td data-typeid="' . $row['absence_type_id'] . '" class="absencesTypeName">' . $row['absence_name'] . '</td><td class="absencesStartDate">';
 
 
 
         if ($row['start_date']==='0000-00-00') {
             echo '00.00.0000' . '</td><td>' ;
         }else{
-            echo (date('d.m.Y',strtotime($row['end_date']))) . '</td><td>' ;
+            echo (date('d.m.Y',strtotime($row['start_date']))) . '</td><td>' ;
         }
 
         if ($row['end_date']==='0000-00-00') {
